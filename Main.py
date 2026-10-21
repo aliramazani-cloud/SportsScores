@@ -1,4 +1,27 @@
 # Create an Intramural score tracker
+teams = []
+num_teams = int(input("how many teams are playing? "))
+for i in range(num_teams):
+    name = input(f"enter team {i+1}: ")
+    team = [name, 0, 0, 0, 0, 0, 0]
+    teams.append(team)
+
+#start an infinite loop for the main menu
+while True:
+    print("--- MEAU ---")
+    print("1)add score")
+    print("2)see team stats")
+    print("3) see overall standings")
+
+    choice = input("Enter your choice (1-4: ")
+
+    # 1) add score
+    if choice == "1":
+        team1_name = input("enter team 1 name: ")
+        team2_name = input("enter team 2 name: ")
+        team1_goals = int(input(f" enter goals for {team1_name} "))
+        team2_goals = int(input(f" enter goals for {team2_name} "))
+
 
 # Each team entry is a list that includes
 #   - Name
