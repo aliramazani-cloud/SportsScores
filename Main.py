@@ -1,4 +1,6 @@
 # Create an Intramural score tracker
+from enum import nonmember
+
 teams = []
 num_teams = int(input("how many teams are playing? "))
 for i in range(num_teams):
@@ -21,6 +23,38 @@ while True:
         team2_name = input("enter team 2 name: ")
         team1_goals = int(input(f" enter goals for {team1_name} "))
         team2_goals = int(input(f" enter goals for {team2_name} "))
+
+        t1 = None
+        t2 = None
+        for t in teams:
+            if t[0].kower() == team1_name.lower():
+                t1 = t
+            elif t[0].lower() == team2_name.lower():
+                t2 = t
+
+    if t1 is not None and t2 is not None:
+        t1[1] += 1
+        t2[2] += 1
+
+        t1[5] += team1_goals
+        t1[6] += team2_goals
+        t2[5] += team2_goals
+        t2[6] += team1_goals
+
+        if team1_goals > team2_goals:
+            t1[2] += 1
+            t2[3] += 1
+        elif team2_goals > team1_goals:
+            t2[2] += 1
+            t2[3] += 1
+        else:
+            t1[4] += 1
+            t2[4] += 1
+
+        
+
+
+
 
 
 # Each team entry is a list that includes
