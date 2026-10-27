@@ -1,4 +1,5 @@
 # Create an Intramural score tracker
+from ctypes.macholib.dyld import DEFAULT_LIBRARY_FALLBACK
 from enum import nonmember
 
 teams = []
@@ -53,7 +54,23 @@ while True:
 
         print("score recorded successfully!")
     else:
-        print("could not find one or both team names. please try again!")
+        print("could not find one or both team names. please try again.")
 
     elif choice == "2":
-        
+    print("\nAvailable Teams:")
+    for t in teams:
+        print(f"- {t[0]}")
+
+    selected = input("Select a team to view stats: ")
+    found = False
+    for t in teams:
+        if t[0].lower() == selected.lower():
+            print(f"\nTeam: {t[0]}")
+    print(f"Games Played: {t[1]}")
+    print(f"Wins: {t[2]} Losses: {t[3]} Ties: {t[4]}")
+    print(f"Goals For: {t[5]}")
+    print(f"Goals Against: {t[6]}")
+    found = True
+    break
+else:
+print("Invalid choice, please select 1, 2, 3, or 4.")
