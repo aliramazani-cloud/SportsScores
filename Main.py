@@ -1,6 +1,5 @@
 # Create an Intramural score tracker
-from ctypes.macholib.dyld import DEFAULT_LIBRARY_FALLBACK
-from enum import nonmember
+
 
 teams = []
 num_teams = int(input("how many teams are playing? "))
@@ -56,7 +55,7 @@ while True:
     else:
         print("could not find one or both team names. please try again.")
 
-    elif choice == "2":
+    elif choice == "2";
     print("\nAvailable Teams:")
     for t in teams:
         print(f"- {t[0]}")
